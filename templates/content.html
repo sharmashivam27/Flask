@@ -1,0 +1,66 @@
+{% extends "base_content.html" %}
+{% block title %}Content{% endblock %}
+
+{%block content2%}
+<p class="text-sm-start"  >
+   <h5> Distance Measurement Using HC-SR04 Via NodeMCU</h5>
+   <br>
+        This is a simple tutorial on interfacing ultrasonic sensor(HC-SRO4) with node mcu.I recently made a project with ultrasonic sensor with node mcu and it requires a little more effort than other microcontrollers like Arduino etc.
+        Before starting with the circuit or the code we must know about how ultrasonic sensor works to properly understand the working of project.
+    <br>
+    <br>
+    <h6>Ultrasonic Sensor HC-SR04</h6>
+    <br>
+    <br>
+        It is composed of Ultrasonic transmitter and receiver  .The transmitter sends a wave at 40,000 Hz and when it hits any object(flat surface) it bounces back  to the sensor .We can calculate the distance by time taken by wave to return and speed of sound in air(already known). 
+        It can measure distance within 2cm to 400 cm range.
+        <br><br><u>Ultrasonic sensor has 4 pins :</u>
+        <br>Vcc : connected to +ve of 5 volt DC supply
+        <br>Gnd : conenccted to negative of 5 volt DC supply
+        <br>Trig : sends the wave
+        <br>Echo : receives the wave
+    <br><br>
+        This should be taken care that ultrasonic sensor gets 5 volt DC supply which is not present in node mcu(it gives 3.3 v).
+    <br><br>
+        Let’s get started with the project:
+    <br><br>
+        Step 1 - Requirements
+    <br><br>
+        <b>Hardware Requirements:</b>
+        <br>i.	Node MCU
+        <br>ii.	Ultrasonic Sensor(HC-SRO4)
+        <br>iii.	Jumper Wires
+        <br>iv.	5 volt supply
+        <br>v.	Breadboard
+        <br>vi.	Micro-USB cable
+        <br><bR><b>Software Requirements:</b>
+        <br>Arduino-IDE
+                   <br><br> Step 2 -Knowing each part
+    Images of each
+    <br><br>
+    Step 3 – Circuit connections
+    
+    
+    <br>Insert HC-SR04 into breadboard.
+    <br>Connect HC-SR04 Vcc to +5v dc
+    <br>Connec  GND of HC-SR04 to -ve of 5v dc
+    <br>Trigger pin is attached to D2 pin of node MCu
+    <br>Echo pin of sensor is attached to pin D3 of node MCu
+
+    <br><br>
+    Step -4 Coding
+    <br><br>
+    Step 5:Output Demonstration
+    <br>
+    
+    Pics of o/p
+    <br>
+    
+    I just showed how we can interface Ultrasonic sensor with node mcu .One can bring upper project in practical functionality ,such as by making smart dustbin or automatic garage door.Node mcu can also be connected to wifi to keep a log of each time the project is accessed .
+    <br>
+    
+    That’s all !! That’s how Ultrasonic sensor works.
+   
+    
+    </p>
+   {%endblock%}
