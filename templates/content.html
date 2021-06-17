@@ -2,7 +2,7 @@
 {% block title %}Content{% endblock %}
 
 {%block content2%}
-<p class="text-sm-start"  >
+<p class="text-sm-start"  style="margin:auto;">
    <h5> Distance Measurement Using HC-SR04 Via NodeMCU</h5>
    <br>
         This is a simple tutorial on interfacing ultrasonic sensor(HC-SRO4) with node mcu.I recently made a project with ultrasonic sensor with node mcu and it requires a little more effort than other microcontrollers like Arduino etc.
@@ -24,40 +24,75 @@
     <br><br>
         Let’s get started with the project:
     <br><br>
-        Step 1 - Requirements
-    <br><br>
+    <div class="steps" >Step 1 - Requirements</div>
+    <br>
+
         <b>Hardware Requirements:</b><br>
-        <br>i.	Node MCU
-        <br>ii.	Ultrasonic Sensor(HC-SRO4)
-        <br>iii.	Jumper Wires
-        <br>iv.	5 volt supply
-        <br>v.	Breadboard
-        <br>vi.	Micro-USB cable
-        <br><bR><b>Software Requirements:</b><br>
-        <br>Arduino-IDE
-                   <br><br> Step 2 -Knowing each part
+        <ul>
+         <li>Node MCU</li>
+         <li>Ultrasonic Sensor(HC-SRO4)</li>
+         <li>Jumper Wires</li>
+         <li>5 volt supply</li>
+         <li>Breadboard</li>
+         <li>Micro-USB cable</li>
+        </ul>
+        
+        <br><b>Software Requirements:</b><br>
+        <ul>
+            <li>Arduino-IDE</li>
+        </ul>
+         <br><br> 
+                   <div class="steps">Step 2 -Knowing each part</div>
     Images of each
     <br><br>
-    Step 3 – Circuit connections
+    <div class="steps">Step 3 – Circuit connections<br></div>
     
-    
-    <br>Insert HC-SR04 into breadboard.
-    <br>Connect HC-SR04 Vcc to +5v dc
-    <br>Connect  GND of HC-SR04 to -ve of 5v dc
-    <br>Trigger pin is attached to D2 pin of node MCu
-    <br>Echo pin of sensor is attached to pin D3 of node MCu
+    <ul>
+    <br><li>Insert HC-SR04 into breadboard.</li>
+    <br><li>Connect HC-SR04 Vcc to +5v dc</li>
+    <br><li>Connect  GND of HC-SR04 to -ve of 5v dc</li>
+    <br><li>Trigger pin is attached to D2 pin of node MCU</li>
+    <br><li>Echo pin of sensor is attached to pin D3 of Node MCU</li>
+    </ul>
 
     <br><br>
-    Step -4 Coding
+    <div class="steps">Step -4 Coding</div>
+    <div  id ="code"  >
+      <pre> 
+            #include&#60;NewPing.h&#62;                  //library for ultarsonic sensor
+            #define TRIGGER_PIN D1                 //defining pin number of trigger
+            #define ECHO_PIN D2                    //defining pin number of echo
+            NewPing sonar(TRIGGER_PIN, ECHO_PIN);  // creating object of NewPing
+            unsigned int dist;                     //defining variables 
+            unsigned int uS ;
+            void setup() {
+             Serial.begin(9600);                  //starting the serial communication
+             pinMode(TRIGGER_PIN,OUTPUT);        //set trigger pin for output
+             pinMode(ECHO_PIN,INPUT);            //set echo pin for input
+            } 
+            void loop() {
+              digitalWrite(TRIGGER_PIN,LOW);      //stop previous wave for fresh start             
+              uS = sonar.ping();                  //Sends a ping , returns the echo time in microseconds 
+              Serial.print("Distance: ");
+              dist=(uS / US_ROUNDTRIP_CM);        //calculating the distance in cm 
+              Serial.println(dist);
+              delay(1500);                        //delay of 1.5 sec before running loop next time time   
+            }
+        </pre>
+    </div>
+<br>
+    <div class="alert alert-info" role="alert" style="width:fit-content;margin:auto;">
+       Click to download code  &emsp;&emsp;<a href="/download/0" ><button type="button" class="btn btn-outline-secondary">Ultarsonic.ino</button></a>
+      </div>
     <br><br>
-    Step 5:Output Demonstration
-    <br>
+    <div class="steps">Step 5:Output Demonstration</div>
+    <br><br>
     
     Pics of o/p
-    <br>
+    <br><br><br>
     
     I just showed how we can interface Ultrasonic sensor with node mcu .One can bring upper project in practical functionality ,such as by making smart dustbin or automatic garage door.Node mcu can also be connected to wifi to keep a log of each time the project is accessed .
-    <br>
+    <br><br>
     
     That’s all !! That’s how Ultrasonic sensor works.
    
