@@ -10,28 +10,28 @@ div.content2{
   }
 }
 div.steps{
-    width:fit-content;
+    text-align: center;
     margin:auto;
     font-weight:bold;
     text-decoration:underline;   
 }
-div#code{
-  width:fit-content;
+pre{
+  
   margin:auto;
+  width:fit-content;
   border-style: solid ;
   border-color: black;
   border-width: medium;
-  overflow: hidden;
   font-size:1vw;
 }
 @media  (max-width: 600px) {
-  div#code{
-    width:fit-content;
+  pre{
+    
     margin:auto;
+    width:fit-content;
     border-style: solid ;
     border-color: black;
     border-width: medium;
-    font-size:1vw;
-   
+    font-size:3vw;
   }
 }

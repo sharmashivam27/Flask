@@ -48,17 +48,17 @@
     <div class="steps">Step 3 – Circuit connections<br></div>
     
     <ul>
-    <br><li>Insert HC-SR04 into breadboard.</li>
-    <br><li>Connect HC-SR04 Vcc to +5v dc</li>
-    <br><li>Connect  GND of HC-SR04 to -ve of 5v dc</li>
-    <br><li>Trigger pin is attached to D2 pin of node MCU</li>
-    <br><li>Echo pin of sensor is attached to pin D3 of Node MCU</li>
+    <li>Insert HC-SR04 into breadboard.</li>
+    <li>Connect HC-SR04 Vcc to +5v dc</li>
+    <li>Connect  GND of HC-SR04 to -ve of 5v dc</li>
+    <li>Trigger pin is attached to D2 pin of node MCU</li>
+    <li>Echo pin of sensor is attached to pin D3 of Node MCU</li>
     </ul>
 
     <br><br>
     <div class="steps">Step -4 Coding</div>
-    <div  id ="code"  >
-      <pre> 
+    
+      <pre><code> 
             #include&#60;NewPing.h&#62;                  //library for ultarsonic sensor
             #define TRIGGER_PIN D1                 //defining pin number of trigger
             #define ECHO_PIN D2                    //defining pin number of echo
@@ -78,8 +78,9 @@
               Serial.println(dist);
               delay(1500);                        //delay of 1.5 sec before running loop next time time   
             }
+            </code>
         </pre>
-    </div>
+    
 <br>
     <div class="alert alert-info" role="alert" style="width:fit-content;margin:auto;">
        Click to download code  &emsp;&emsp;<a href="/download/0" ><button type="button" class="btn btn-outline-secondary">Ultarsonic.ino</button></a>
