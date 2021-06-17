@@ -15,20 +15,26 @@ div.steps{
     font-weight:bold;
     text-decoration:underline;   
 }
+#down{
+  background-color: white;
+  box-shadow: 0 0 5px black;
+}
+code{
+  padding: 0%;
+
+}
 pre{
-  
+  width: fit-content;
   margin:auto;
-  width:fit-content;
-  border-style: solid ;
-  border-color: black;
-  border-width: medium;
-  font-size:1vw;
+  padding: 0%;
+  background-color:white;
+  font-size:x-small;
+  box-shadow: 0 0 5px black;
 }
 @media  (max-width: 600px) {
-  pre{
+  pare{
     
     margin:auto;
-    width:fit-content;
     border-style: solid ;
     border-color: black;
     border-width: medium;
